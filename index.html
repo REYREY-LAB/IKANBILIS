@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farewell - Ikan Bilis</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #f8e1f4, #ffe6e6, #e0f7fa);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: #d63384;
+    }
+    h1 {
+      font-size: 4em;
+      margin-bottom: 10px;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    nav button {
+      background-color: #ffb6c1;
+      border: 2px solid #d63384;
+      border-radius: 30px;
+      padding: 12px 25px;
+      margin: 0 12px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    nav button:hover {
+      background-color: #ffe4e1;
+      transform: scale(1.1);
+    }
+
+    .page {
+      display: none;
+      padding: 0 20px 40px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 350px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .card {
+      width: 400px;
+      background-color: #fff0f5;
+      border: 2px dashed #d63384;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.5em;
+      color: #d63384;
+    }
+
+    .card p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    /* Sparkles */
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #fff;
+      animation: sparkle 4s infinite ease-in-out;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    @keyframes sparkle {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1.8);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-80px) scale(1);
+      }
+    }
+
+    /* Letter Section Styling */
+    #letter .card {
+      max-width: 90%;
+      padding: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin: auto;
+      border-width: 3px;
+    }
+
+    #letter .card img {
+      width: 350px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    #letter .card h3 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    #letter .card p {
+      font-size: 1.4em;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ikan Bilis : Off to New Waters</h1>
+    <p style="font-size: 1.3em;">By Your Orange Cat Lover, Farah</p>
+  </header>
+
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('letter')">Letter</button>
+  </nav>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="page active">
+      <div class="gallery">
+        <img src="mem1.jpeg" alt="Memory 1" />
+        <img src="mem2.jpeg" alt="Memory 2" />
+        <img src="mem3.jpeg" alt="Memory 3" />
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Irdina</h3>
+          <p>Heading to UNIKL, Melaka. Always kind and cheerful!</p>
+             <p>Even though you are the first anchovies that need to go, I will always support you from afar 🐟.</p>
+        </div>
+        <div class="card">
+          <h3>Ainputri</h3>
+          <p>On her way to UiTM Puncak Alam. The artist of our hearts!</p>
+            <p>We might go different place at one time, but go catch your dream my anchovies!</p>
+        </div>
+      </div>
+    </section>
+
+  <section id="letter" class="page">
+  <!-- Pictures on top -->
+  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 30px;">
+    <img src="irdina.jpeg" alt="Irdina" style="width: 300px; height: auto; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+    <img src="ainputri.jpeg" alt="Ainputri" style="width: 300px; height: auto; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+  </div>
+
+  <!-- Letter Box -->
+  <div class="card" style="
+    width: 1000px;
+    max-width: 95%;
+    margin: auto;
+    border-width: 3px;
+    padding: 40px;
+    text-align: center;
+    box-sizing: border-box;
+  ">
+    <h3 style="font-size: 2.2em;">Dear My achovies</h3>
+    <p style="font-size: 1.4em; line-height: 1.6;">
+      As I sit down to write this, a soft ache settles in — knowing we’re about to walk different paths, chasing dreams in different corners of the world.
+
+Irdina, your laughter has always been the light that filled our quietest days. You’ve danced through our moments with joy so pure, it reminded me how happiness can be simple and loud all at once.
+
+Ainputri, you’ve always been the calm to our storm. With your quiet strength and thoughtful eyes, you understood us even when we had no words. Your art, your kindness — they left gentle fingerprints on our hearts.
+
+We’ve built something rare — memories stitched together by late-night talks, inside jokes, and warm silences. Though the road ahead may take us to different places, I believe the bond we’ve woven will stretch across any distance.
+
+May we always carry each other, in memory and in heart.
+    </p>
+    <p style="font-size: 1.4em;">With love, Siti Nurfarah</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Script for Page Toggle -->
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+  <!-- Sparkle Background Script -->
+  <script>
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = Math.random() * 100 + "vh";
+      sparkle.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 4000);
+    }
+    setInterval(createSparkle, 150);
+  </script>
+
+ <!-- 🎵 Background Music -->
+<audio id="bg-music" autoplay loop controls style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; opacity: 0.8;">
+  <source src="yourmusic.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
