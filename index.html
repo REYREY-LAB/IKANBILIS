@@ -13,8 +13,6 @@
       animation: gradientBG 15s ease infinite;
       overflow-x: hidden;
       position: relative;
-        
-        
     }
 
     @keyframes gradientBG {
@@ -174,33 +172,6 @@ video {
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-      .preview-area {
-  margin-top: 20px;
-  text-align: center;
-}
-       .center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    gap: 10px;
-  }
-
-  textarea {
-    width: 300px;
-    height: 100px;
-  }
-      .page-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.content-box {
-  text-align: center;
-}
   </style>
 </head>
 <body>
@@ -210,13 +181,10 @@ video {
   </header>
 
   <nav>
-  <button onclick="showPage('home')">Home</button>
+  s<button onclick="showPage('home')">Home</button>
   <button onclick="showPage('letter')">Letter</button>
-  <button onclick="showPage('animal')">Animal that represent us</button>
+ <button onclick="showPage('animal')">Animal that represent us</button>
   <button onclick="showPage('To Lion From Fox and Cat')">To Lion From Fox and Cat</button>
-  <button onclick="showPage('lion')">🦁 Lion</button>
-  <button onclick="showPage('fox')">🦊 Fox</button>
-  <button onclick="showPage('cat')">🐱 Cat</button>
 </nav>
   <main>
     <!-- Home Section -->
@@ -274,46 +242,6 @@ May we always carry each other, in memory and in heart. No matter how far we swi
     <p style="font-size: 1.4em;">With all my love, Siti Nurfarah</p>
   </div>
 </section>
-      
-<!-- Shared Page Template -->
-<center>
-<section id="lion" class="page">
-  <div class="card center-content">
-    <h3>🦁 Lion's Page</h3>
-    <textarea id="shared-text" placeholder="Write something..."></textarea><br>
-    <button id="save">Save</button>
-    <button id="delete">Delete</button><br><br>
-    <input type="file" id="image-upload" accept="image/*"><br>
-    <input type="file" id="video-upload" accept="video/*">
-  </div>
-</section>
-</center>
-
-<center>
-<section id="fox" class="page">
-  <div class="card center-content">
-    <h3>🦊 Fox's Page</h3>
-    <textarea id="shared-text" placeholder="Write something..."></textarea><br>
-    <button id="save">Save</button>
-    <button id="delete">Delete</button><br><br>
-    <input type="file" id="image-upload" accept="image/*"><br>
-    <input type="file" id="video-upload" accept="video/*">
-  </div>
-</section>
-</center>
-    
-<center>    
-<section id="cat" class="page">
-  <div class="card center-content">
-    <h3>🐱 Cat's Page</h3>
-    <textarea id="shared-text" placeholder="Write something..."></textarea><br>
-    <button id="save">Save</button>
-    <button id="delete">Delete</button><br><br>
-    <input type="file" id="image-upload" accept="image/*"><br>
-    <input type="file" id="video-upload" accept="video/*">
-  </div>
-</section>
-</center>
 
   </main>
 
@@ -325,7 +253,6 @@ May we always carry each other, in memory and in heart. No matter how far we swi
       window.scrollTo(0, 0);
     }
   </script>
-    
 
   <!-- Sparkle Background Script -->
   <script>
@@ -340,51 +267,6 @@ May we always carry each other, in memory and in heart. No matter how far we swi
     }
     setInterval(createSparkle, 150);
   </script>
-    <script>
-  // Text save/load
-  function saveText(key) {
-    const text = document.getElementById("text-" + key).value;
-    localStorage.setItem("text-" + key, text);
-  }
-
-  function clearText(key) {
-    localStorage.removeItem("text-" + key);
-    document.getElementById("text-" + key).value = "";
-    document.getElementById("preview-" + key).innerHTML = "";
-    localStorage.removeItem("file-" + key);
-  }
-
-  function loadSavedData() {
-    ['lion', 'fox', 'cat'].forEach(key => {
-      const text = localStorage.getItem("text-" + key);
-      if (text) document.getElementById("text-" + key).value = text;
-
-      const file = localStorage.getItem("file-" + key);
-      if (file) document.getElementById("preview-" + key).innerHTML = file;
-    });
-  }
-
-  // File preview and save
-  function previewFile(event, key) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      let content = "";
-      if (file.type.startsWith("image")) {
-        content = `<img src="${e.target.result}" style="max-width:100%; border-radius: 10px;" />`;
-      } else if (file.type.startsWith("video")) {
-        content = `<video controls style="max-width:100%; border-radius: 10px;"><source src="${e.target.result}"></video>`;
-      }
-      document.getElementById("preview-" + key).innerHTML = content;
-      localStorage.setItem("file-" + key, content);
-    };
-    reader.readAsDataURL(file);
-  }
-
-  window.onload = loadSavedData;
-</script>
 
  <!-- 🎵 Background Music -->
 <audio id="bg-music" autoplay loop controls style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; opacity: 0.8;">
@@ -430,45 +312,6 @@ Wave farewell beneath the sky.<br></p>
   </div>
 </section>
 
-<!-- Firebase SDKs -->
-<script type="module">
-  // Import Firebase
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getDatabase, ref, set, get, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyA6pwZIWdwtmxDrY1Z8S5PL64H2GVW60ec",
-    authDomain: "ikan-bilis-project.firebaseapp.com",
-    projectId: "ikan-bilis-project",
-    storageBucket: "ikan-bilis-project.appspot.com",
-    messagingSenderId: "2317170344",
-    appId: "1:2317170344:web:57dbeb64c1e80ac5bfb49d",
-    databaseURL: "https://ikan-bilis-project-default-rtdb.asia-southeast1.firebasedatabase.app"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-  const dataRef = ref(db, "sharedText");
-
-  const textarea = document.querySelector("textarea");
-  const saveBtn = document.getElementById("save");
-  const deleteBtn = document.getElementById("delete");
-
-  // Save to Firebase
-  saveBtn.addEventListener("click", () => {
-    set(dataRef, textarea.value);
-  });
-
-  // Load from Firebase
-  onValue(dataRef, (snapshot) => {
-    textarea.value = snapshot.exists() ? snapshot.val() : "";
-  });
-
-  // Delete from Firebase
-  deleteBtn.addEventListener("click", () => {
-    remove(dataRef);
-  });
-</script>
 
 
 
