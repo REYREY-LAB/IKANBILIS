@@ -159,6 +159,19 @@
       font-size: 1.4em;
       line-height: 1.7;
     }
+      .video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+video {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
   </style>
 </head>
 <body>
@@ -168,10 +181,11 @@
   </header>
 
   <nav>
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('letter')">Letter</button>
-  </nav>
-
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('letter')">Letter</button>
+ <button onclick="showPage('animal')">Animal that represent us</button>
+  <button onclick="showPage('video')">Video</button>
+</nav>
   <main>
     <!-- Home Section -->
     <section id="home" class="page active">
@@ -259,6 +273,47 @@ May we always carry each other, in memory and in heart. No matter how far we swi
   <source src="yourmusic.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+<section id="animal" class="page">
+  <div class="card" style="margin: 0 auto;">
+    <h3>🐾 "Fox, Cat, and Lion" 🐾</h3>
+    <p>A quiet cat, with gentle paws,<br>
+Watched from afar, with silent thoughts.<br>
+The fox and lion, side by side,<br>
+Laughed and played beneath the sky.<br><br>
+
+The cat stayed back, unsure, unseen,<br>
+Afraid to step into their scene.<br>
+But fox reached out, then lion too —<br>
+A friendship formed, warm and true.<br><br>
+
+They shared soft days and starlit nights,<br>
+They danced through joy, they held on tight.<br>
+But even bonds can feel the strain,<br>
+A clash of words, a drop of rain.<br><br>
+
+Tears were shed, and hearts grew sore,<br>
+They turned away, spoke less than before.<br>
+Yet slowly, gently, they forgave,<br>
+And love returned, as strong and brave.<br><br>
+
+But time moves on, and paths divide,<br>
+The lion walks a different tide.<br>
+The fox and cat, with hearts held high,<br>
+Wave farewell beneath the sky.<br></p>
+  </div>
+</section>
+
+<section id="video" class="page">
+  <div class="video-container">
+    <video controls autoplay muted loop>
+      <source src="yourvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+
 
 </body>
 </html>
